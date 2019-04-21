@@ -1,0 +1,141 @@
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>iKofe - Home</title>
+    
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600&amp;subset=cyrillic" rel="stylesheet"/>
+    </head>
+    <body>
+        <div class="page-wrapper">
+            <div class="content">
+
+                <div class="banner">
+                    <img src="images/Kofe_block.svg" />
+                </div>
+                <div class="underbanner-inscription">Сайт находится в разработке </div>
+            </div>
+            <div class="SN-links">
+                    <div class="SN-item">
+                        <a href="https://vk.com/mediakofe">
+                            <img src="images/icons/VK.svg" />
+                        </a>
+                    </div>
+                    <div class="SN-item">
+                        <a href="https://www.facebook.com/mediaKOFE/">
+                            <img src="images/icons/Facebook.svg" />
+                        </a>
+                    </div>
+                    <div class="SN-item">
+                        <a href="https://www.youtube.com/channel/UCtvr5_E_2zOHGxBDkqAvE9A">
+                            <img src="images/icons/YouTube.svg" />
+                        </a>
+                    </div>
+                    <div class="SN-item">
+                        <a href="https://www.instagram.com/mediakofe.perm/">
+                            <img src="images/icons/Instagram.svg" />
+                        </a>
+                    </div>
+            </div>
+        </div>
+        <style>
+            html {
+                overflow-x: hidden;
+            }
+
+            body {
+                margin: 0px;
+                padding: 0px;
+                font-family: 'Montserrat';
+            }
+
+            div {
+                box-sizing: border-box;
+            }
+
+            a, a:visited {
+                color: white;
+                text-decoration: none;
+            }
+
+            .page-wrapper {
+                max-width: 1920px;
+                height: 100%;
+                background-image: url(images/Kofe_cubes_full.jpg);
+                background-position: center;
+                background-repeat: no-repeat;
+
+            }
+
+            .content {
+                margin-left: auto;
+                margin-right: auto;
+                width: 1200px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+            }
+
+            .banner {
+                display: flex;
+                justify-content: flex-start;
+                width: 100%;
+                max-width: 300px;
+                max-height: 300px;
+                margin-top: 30px;
+            }
+
+            .banner img {
+                width: 100%;
+                height: 100%;
+            }
+
+            .underbanner-inscription {
+                color: #ffffff;
+                margin-top: 10px;
+                font-size: 12px;
+                font-weight: 600;
+            }
+
+            .SN-links {
+                position: fixed;
+                bottom: 0;
+                display: flex;
+                flex-direction: row;
+                width: 100%;
+                height: 80px;
+                background-color: #ffffff;
+                border-top: 1px solid rgba(123, 124, 124, 0.5);
+            }
+
+            .SN-item {
+                display: flex;
+                flex-basis: 25%;
+                border-right: 1px solid rgba(123, 124, 124, 0.5);
+            }
+
+            .SN-item a {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                height: 100%;
+            }
+
+            .SN-item:hover {
+                background-color: #F2F2F2;
+            }
+
+            .SN-item:last-child {
+                border-right: none;
+            }
+
+            @media screen and (max-device-width: 1200px) {
+                .content {
+                    width: 90%;
+                }
+            }
+
+        </style>
+    </body>
+</html>    
