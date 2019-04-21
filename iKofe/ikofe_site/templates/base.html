@@ -1,0 +1,89 @@
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>iKofe - Home</title>
+
+        {% load static %}
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600&amp;subset=cyrillic" rel="stylesheet"/>
+        <link href="{% static 'css\base.css' %}" rel="stylesheet"/>
+    </head>
+    <body>
+        <div class="page-wrapper">
+
+                <div class="mobile-menu" id="mobileMenu" style="display: none;">
+                    <!-- creates from js -->
+                </div>
+
+                <div class="header">
+                    <div class="header-item">
+                        <a href=""><img src="{% static 'images/logo.svg' %}" alt="Лого"/></a>
+                    </div>
+                    <div class="header-item">
+                        <a href="">видеореклама</a>
+                    </div>
+                    <div class="header-item">
+                        <a href="">реклама в лифтах</a>
+                    </div>
+                    <div class="header-item">
+                        <div class="header-subitem">
+                            <a href=""><img src="{% static 'images/icons/call.svg' %}"/></a>
+                        </div>
+                        <div class="header-subitem">
+                            <a id="burger" href=""><img src="{% static 'images/icons/menu.svg' %}"/></a>
+                            <a id="cancel" href="" style="display: none;"><img src="{% static 'images/icons/close.svg' %}"/></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="headerMenu" class="header-menu">
+                    <div class="header-menu-items">
+                        <div class="header-menu-item"><a href="">наши проекты</a></div>
+                        <div class="header-menu-item"><a href="">о компании</a></div>
+                        <div class="header-menu-item"><a href="">новости</a></div>
+                        <div class="header-menu-item"><a href="">контакты</a></div>
+                    </div>
+                </div>
+
+                {% block content %}
+                {% endblock %}
+
+                <div class="footer" id="footer">
+                    <div class="footer-wrapper">
+                        <div class="footer-contacts">
+                            <div class="footer-contacts-label">
+                                <a href=""><img src="static/images/logo.svg"/></a>
+                            </div>
+                            <div class="footer-contacts-contacts">
+                                г.Пермь, ул. Куйбышева 2-321<br>
+                                info@ikofe.ru<br>
+                                +7 (342) 287-02-07
+                            </div>
+                        </div>
+                        <div class="footer-section">
+                            <div class="footer-section-item">видеореклама 
+                                <img class="arrow-icon" src="{% static 'images/icons/forward.svg' %}"/>
+                            </div>
+                            <div class="footer-section-item">проекты 
+                                <img class="arrow-icon" src="{% static 'images/icons/forward.svg' %}"/>
+                            </div>
+                            <div class="footer-section-item">о компании 
+                                <img class="arrow-icon" src="{% static 'images/icons/forward.svg' %}"/>
+                            </div>
+                            <div class="footer-section-item">реклама в лифтах
+                                <img class="arrow-icon" src="{% static 'images/icons/forward.svg' %}"/>
+                            </div>
+                            <div class="footer-section-item">новости
+                                <img class="arrow-icon" src="{% static 'images/icons/forward.svg' %}"/>
+                            </div>
+                            <div class="footer-section-item">контакты
+                                <img class="arrow-icon" src="{% static 'images/icons/forward.svg' %}"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+        </div>
+
+        <script type="text/javascript" src="{% static 'js\menu.js' %}"></script>
+    </body>
+</html>

@@ -1,0 +1,119 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% load static %}
+<link href="{% static 'css\index.css' %}" rel="stylesheet"/>
+
+<div class="banner">
+    <div class="banner-wrapper">
+        <div class="banner-window">
+            <div class="banner-window-label">
+                <span class="banner-window-label-label">нашу рекламу видно</span>
+            </div>
+            <a href="">
+                <div class="banner-window-link">
+                    <div class="banner-window-link-words">заказать звонок</div>
+                    <img class="banner-window-link-forward" src="{% static 'images/icons/forward.svg' %}" />
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="partners">
+</div>
+
+<div class="services">
+    <div class="services-left">
+        <div class="services-image"><img src="{% static 'images/ikofe_banner_2_new.jpg' %}" /></div>
+        <div class="services-label">Видеореклама</div>
+        <div class="services-text">Вот уже более 7 лет, мы являемся оператором собственной сети вещания indoor-media</div>
+        <a class="services-button-wrapper" href="">
+            <div class="services-button">
+                <div class="btn-animation"></div>
+                <span>узнать больше</span>
+            </div>
+        </a>
+    </div>
+    <div class="services-right">
+        <div class="services-label">Реклама в лифтах</div>
+        <div class="services-text">Вот уже более 7 лет, мы являемся оператором собственной сети вещания indoor-media</div>
+        <a class="services-button-wrapper" href="">
+            <div class="services-button">
+                <div class="btn-animation"></div>
+                <span>узнать больше</span>
+            </div>
+        </a>
+        <div class="services-image"><img src="{% static 'images/ikofe_banner_3_new.jpg' %}" /></div>
+    </div>
+</div>
+
+<div class="story-text">
+    Наша компания основана в 2011 году. И вот уже более 7 лет, мы являемся оператором собственной сети вещания indoor-media,
+    которая охватывает более 200 жилых комплексов бизнес и премиум - класса города Пермь. А также являемся владельцами
+    более 200 видеомониторов в Перми и Пермском крае. Наши мониторы размещены в отделениях Почты России, в детских поликлиниках 
+    г. Перми, крупных торговых центрах.
+</div>
+
+<div class="last-events">
+    <h1>Последние события</h1>
+    <div class="events">
+        <div class="slider-button" id="slider-left-button" style="display: none;">
+            <img src="{% static 'images/icons/right_arrow.png' %}" />
+        </div>
+        <div class="events-wrapper" id="eventsWrapper">
+        </div>
+        <div class="slider-button" id="slider-right-button">
+            <img src="{% static 'images/icons/right_arrow.png' %}" />
+        </div>
+    </div>
+</div>
+
+<div class="achievements">
+    <h1>Наши достижения</h1>
+    <div class="achievements-table">
+        <div class="achievements-table-cell" style="border-right: none; border-bottom: none;">
+            <img src="{% static 'images/icons/award.svg' %}" />
+            <p>100% покрытие центральной<br> части города </p>
+        </div>
+        <div class="achievements-table-cell" style="border-right: none; border-bottom: none;">
+            <img src="{% static 'images/icons/award.svg' %}" />
+            <p>Размещение рекламы без<br> посредников </p>
+        </div>
+        <div class="achievements-table-cell" style="border-bottom: none;">
+            <img src="{% static 'images/icons/award.svg' %}" />
+            <p>0,04 Р - цена одного контакта со<br> стендом</p>
+        </div>
+        <div class="achievements-table-cell" style="border-right: none;">
+            <img src="{% static 'images/icons/award.svg' %}" />
+            <p>3 дня до первых откликов после<br> размещения</p>
+        </div>
+        <div class="achievements-table-cell" style="border-right: none;">
+            <img src="{% static 'images/icons/award.svg' %}" />
+            <p>Скидки на длительное <br>размещение</p>
+        </div>
+        <div class="achievements-table-cell">
+            <img src="{% static 'images/icons/award.svg' %}" />
+            <p>Самый крупный собственник<br> Премиум-стендов</p>
+        </div>
+    </div>
+</div>
+
+<div class="feedback">
+    <h1>Напишите нам</h1>
+    <form>
+        <input type="text" placeholder="Имя" />
+        <input type="text" placeholder="Телефон" />
+        <div style="display: flex;">
+            <input checked type="checkbox" /> 
+            <div>Я согласен на обработку моих персональных (в соответствии с Федеральным законом
+            №152-ФЗ "О персональных данных")</div>
+        </div>
+        <input type="submit" value="Оставить заявку" style="cursor: pointer;" />
+    </form>
+</div>
+
+
+<script type="text/javascript" src="{% static 'js\eventsSlider.js' %}"></script>
+{% endblock %}
