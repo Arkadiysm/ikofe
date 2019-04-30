@@ -40,6 +40,7 @@
 }
 
 .banner-window-link {
+    position: relative;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -50,11 +51,13 @@
     border-top: 1px solid rgba(123, 124, 124, 0.3);
 }
 
+
 .banner-window-link-words {
     color: #E6177E;
     text-transform: uppercase;
     font-weight: bold;
     font-size: 14px;
+    transition: color 0.25s;
 }
 
 .banner-window-link-forward {
@@ -65,6 +68,51 @@
     width: 100%;
     height: 200px;
     background-color: #ffffff;
+    position: relative;
+}
+
+.partners-slider {
+    position: absolute;
+    left: 0;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    transition: left 0.7s;
+    z-index: 1;
+}
+
+.white-block {
+    position: absolute;
+    height: 100%;
+    width: 50px;
+    right: 0;
+    z-index: 3;
+    background-color: #ffffff;
+}
+
+.partners-slider-button {
+    position: absolute;
+    top: 40%;
+    z-index: 3;
+    cursor: pointer;
+}
+
+.partners-slider-button img {
+    width: 30px;
+}
+
+.partners-slider-button:first-child {
+    left: 20px;
+    transform: scaleX(-1);
+}
+
+.partners-slider-button:last-child {
+    right: 20px;
+}
+
+.partners-slide {
+    width: 250px;
 }
 
 .services {
@@ -124,14 +172,12 @@
     color: #000000;
 }
 
-.btn-animation {
-    position: absolute;
-    left: 0;
-    height: 100%;
-    width: 0;
-    background-color: #474a51;
-    transition: width 0.25s;
-    z-index: 1;
+.services-left .btn-animation {
+    background-color: #000000;
+}
+
+.services-right .btn-animation {
+    background-color: #E6177E;
 }
 
 .services-button span {
@@ -141,10 +187,6 @@
     font-size: 14px;
     transition: color .25s cubic-bezier(.215,.61,.355,1);
     z-index: 2;
-}
-
-.services-button:hover .btn-animation {
-    width: 100%;
 }
 
 .services-button:hover {
@@ -159,7 +201,6 @@
     width: 50%;
     color: #ffffff;
     background-color: #1a1a1a;
-    padding-bottom: 80px;
 }
 
 .services-right .services-image {
@@ -176,6 +217,11 @@
     font-size: 18px;
     text-align: center;
     line-height: 26px;
+}
+
+.story-text-text {
+    height: 100%;
+    width: 780px;
 }
 
 .last-events {
@@ -244,6 +290,15 @@
 
 }
 
+.event a {
+    display: flex;
+    width: 580px;
+}
+
+.event a img {
+    width: 100%;
+}
+
 .events p {
     font-size: 12px;
     color: #666666;
@@ -289,66 +344,71 @@
     border: 2px solid rgba(123, 124, 124, 0.3);
 }
 
-.feedback {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    height: 450px;
-    background-color: #000000;
-    width: 100%;
+
+@media screen and ( max-device-width: 1200px ) and ( min-device-width: 500px ) {
+
+    .achievements-table {
+        width: 100%;
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .achievements-table-cell {
+        flex-basis: 50%;
+        border: 2px solid rgba(123, 124, 124, 0.3) !important;
+    }
+
+    .achievements-table-cell:nth-child(2n-1) {
+        border-bottom: none !important;
+        border-right: none !important;
+    }
+
+    .achievements-table-cell:nth-child(2n) {
+        border-bottom: none !important;
+    }
+
+    .achievements-table-cell:last-child,
+    .achievements-table-cell:nth-child(5) {
+        border-bottom: 2px solid rgba(123, 124, 124, 0.3) !important;
+    }
+
+
 }
 
-.feedback h1 {
-    margin-top: 120px;
-    margin-bottom: 20px;
-    color: #ffffff;
+
+@media screen and ( max-device-width: 900px ) {
+
+
+    .services {
+        height: 500px;
+    }
+
+    .services-text {
+        width: 250px;
+        font-size: 16px;
+    }
+
+    .services-left .services-image {
+        margin-bottom: 0;
+    }
+
+    .services-right .services-image {
+        margin-top: 0;
+    }
+
+    .events {
+        position: relative;
+    }
+
+    .slider-button {
+        width: 100px;
+        height: 100px;
+        top: 30%;
+    }
 }
 
-.feedback form {
-    display: flex;
-    flex-direction: column;
-}
-
-.feedback form div {
-    color: #ffffff;
-    font-size: 12px;
-    margin-bottom: 20px;
-}
-
-.feedback input {
-    margin-bottom: 15px;
-}
-
-.feedback input[type="text"],
-.feedback input[type="submit"] {
-    width: 700px;
-    height: 60px;
-    font-size: 16px;
-    padding-left: 20px;
-}
-
-.feedback input[type="submit"] {
-    font-size: 14px;
-    text-transform: uppercase;
-    background-color: #E6177E;
-    color: #ffffff;
-    font-weight: 600;
-    border: none;
-    padding-left: 0;
-    margin-bottom: 0;
-}
-
-.feedback input[type="checkbox"] {
-    margin-right: 10px;
-    transform: scale(1.8);
-    cursor: pointer;
-    
-}
 
 @media screen and ( max-device-width: 500px ) {
-
-    
     
     .banner {
         height: 550px;
@@ -384,11 +444,16 @@
 
     .partners {
         height: 160px;
+        margin-bottom: 32px;
+    }
+
+    .white-block {
+        display: none;
     }
 
     .services {
         flex-direction: column;
-        height: 980px;
+        height: auto;
     }
 
     .services-left,
@@ -407,11 +472,28 @@
         padding-bottom: 55px;
     }
 
+    .services-left div,
+    .services-right div {
+        flex-shrink: 1;
+    }
+
+    .services-image {
+        flex-shrink: 2;
+        width: 90%;
+    }
+
+    .services-left .services-image {
+        margin-bottom: 24px;
+    }
 
     .services-right {
         background-color: #1a1a1a;
         background-position: bottom;
         padding-top: 65px;
+    }
+
+    .services-right .services-image {
+        margin-top: 0;
     }
 
     .services-right div,
@@ -449,8 +531,30 @@
         height: auto;
     }
 
-    .last-events .slider-button {
-        display: none;
+    .events {
+        position: relative;
+    }
+
+    .slider-button {
+        height: 60px;
+        width: 60px;
+        top: 17%;   
+    }
+
+    .slider-button img{
+        width: 30px;
+    }
+
+    .events-wrapper {
+        left: 30px;
+    }
+
+    .event a {
+        width: 100%;
+    }
+
+    .event a img {
+        width: 310px;
     }
 
     .achievements {
@@ -473,7 +577,7 @@
         min-height: 250px;
         width: 310px;
         height: 310px;
-        border: 2px solid rgba(123, 124, 124, 0.3);
+        border: 2px solid rgba(123, 124, 124, 0.3) !important;
         border-right: 2px solid rgba(123, 124, 124, 0.3) !important;
         border-bottom: none !important;
         font-size: 16px;
@@ -482,41 +586,6 @@
     .achievements-table-cell:last-child {
         border-bottom: 2px solid rgba(123, 124, 124, 0.3) !important;
     }
-
-    .feedback {
-        height: auto;
-    }
-
-    .feedback h1 {
-        margin-top: 50px;
-    }
-
-    .feedback form {
-        justify-content: center;
-        align-items: center;
-    }
-
-    .feedback form {
-        margin-left: 20px;
-        margin-right: 20px;
-    }
-
-    .feedback form div {
-        font-size: 11px;
-        width: 310px;
-        margin-bottom: 10px;
-    }
-
-    .feedback form input {
-        margin-bottom: 10px;
-    }
-
-    .feedback form input[type="text"],
-    .feedback form input[type="submit"] {
-        width: 310px;
-        height: 60px;
-    }
-
 
 
 }

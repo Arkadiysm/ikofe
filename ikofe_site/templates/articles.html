@@ -1,0 +1,117 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% load static %}
+<link href="{% static 'css\articles.css' %}" rel="stylesheet"/>
+<script type="text/javascript" src="https://vk.com/js/api/share.js?95" charset="windows-1251"></script>
+
+
+<div class="top-banner">
+    <div class="top-banner-wrapper">
+        <div class="top-banner-navigation">
+            <a href="{% url 'index' %}">Главная</a>
+            <div class="point"></div>
+            <a href="{% url 'project' %}">Проекты</a>
+        </div>
+        <h1>{{ article.title }}</h1>
+        <span class="top-banner-date">{{ article.pub_date.date }}</span>
+    </div>
+</div>
+
+<div class="image-wrapper">
+    {% if article.youtube_link %}
+        <iframe width="580" height="290" src="https://www.youtube.com/embed/{{ article.youtube_link }}" 
+            frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen></iframe>
+    {% else %}
+        <img src="/static/pictures/{{ article.image }}" />
+    {% endif %}
+</div>
+
+<div class="description">
+    {{ article.description }}
+</div>
+
+<div class="SN-links">
+    <p>Поделиться</p>
+    <div class="SN-links-links">
+        <div class="fb-link SN-link" id="fbLink">
+            <img src="/static/images/icons/Facebook.svg" id="fbImage" />
+            <img src="/static/images/icons/Facebook_white.svg" id="fbWhiteImage" />
+        </div>
+        <div class="vk-link SN-link" id="vkLink">
+            <img src="/static/images/icons/VK.svg" id="vkImage" />
+            <img src="/static/images/icons/VK_white.svg" id="vkWhiteImage" />
+            <script type="text/javascript">
+                document.write(VK.Share.button(false,{type: "link_noicon", text: "vk"}));
+            </script>
+        </div>
+    </div>
+</div>
+
+<div class="last-events">
+    <h1>Последние события</h1>
+    <div class="events">
+        <div class="slider-button" id="slider-left-button" style="display: none;">
+            <img src="{% static 'images/icons/right_arrow.png' %}" />
+        </div>
+        <div class="events-wrapper" id="eventsWrapper">
+            {% for event in events %}
+                <div class="event">
+                    <a href="{% url 'event' %}"><img src="/static/pictures/{{ event.image }}" /></a>
+                    <p>{{ event.pub_date.date }}</p>
+                    <h2>{{ event.title }}</h2>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="slider-button" id="slider-right-button">
+            <img src="{% static 'images/icons/right_arrow.png' %}" />
+        </div>
+    </div>
+</div>
+
+
+
+<script type="text/javascript" src="{% static 'js\eventsSlider.js' %}"></script>
+<script>
+    (function() {
+
+        document.getElementById('vkLink').children[3].style.display = 'none';
+
+        document.getElementById('fbLink').onmousemove = function() {
+            document.getElementById('fbImage').style.display = 'none';
+            document.getElementById('fbWhiteImage').style.display = 'block';
+        }
+
+        document.getElementById('vkLink').onmousemove = function() {
+            document.getElementById('vkImage').style.display = 'none';
+            document.getElementById('vkWhiteImage').style.display = 'block';
+        }
+
+        document.getElementById('vkLink').onmouseout = function() {
+            document.getElementById('vkImage').style.display = 'block';
+            document.getElementById('vkWhiteImage').style.display = 'none';
+        }
+
+        document.getElementById('fbLink').onmouseout = function() {
+            document.getElementById('fbImage').style.display = 'block';
+            document.getElementById('fbWhiteImage').style.display = 'none';
+        }
+
+        document.getElementById('fbLink').onclick = function() {
+            window.location.href = `https://www.facebook.com/dialog/share?
+                app_id=145634995501895&
+                display=popup&
+                href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2F&
+                redirect_uri=https%3A%2F%2Fdevelopers.facebook.com%2Ftools%2Fexplorer`;
+        }
+
+
+        document.getElementById('vkLink').onclick = function() {
+            const url = this.children[3].href;
+            window.location.href = url; 
+        }
+    })();
+</script>
+
+{% endblock %}

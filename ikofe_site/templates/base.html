@@ -1,11 +1,16 @@
 <html>
     <head>
         <meta charset="utf-8"/>
-        <title>iKofe - Home</title>
-
+        <title>iKofe - {{ title }}</title> 
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        
         {% load static %}
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600&amp;subset=cyrillic" rel="stylesheet"/>
         <link href="{% static 'css\base.css' %}" rel="stylesheet"/>
+        <link rel="icon" href="{% static 'images/icons/favicon.png' %}" type="image/png" />
+        <script type="text/javascript" src="{% static 'js\throttle.js' %}"></script>
     </head>
     <body>
         <div class="page-wrapper">
@@ -16,17 +21,17 @@
 
                 <div class="header">
                     <div class="header-item">
-                        <a href=""><img src="{% static 'images/logo.svg' %}" alt="Лого"/></a>
+                        <a href="{% url 'index' %}"><img src="{% static 'images/logo.svg' %}" alt="Лого"/></a>
                     </div>
                     <div class="header-item">
-                        <a href="">видеореклама</a>
+                        <a href="{% url 'video_ad' %}">видеореклама</a>
                     </div>
                     <div class="header-item">
-                        <a href="">реклама в лифтах</a>
+                        <a href="{% url 'elevator' %}">реклама в лифтах</a>
                     </div>
                     <div class="header-item">
                         <div class="header-subitem">
-                            <a href=""><img src="{% static 'images/icons/call.svg' %}"/></a>
+                            <a href="#form"><img src="{% static 'images/icons/call.svg' %}"/></a>
                         </div>
                         <div class="header-subitem">
                             <a id="burger" href=""><img src="{% static 'images/icons/menu.svg' %}"/></a>
@@ -37,21 +42,36 @@
 
                 <div id="headerMenu" class="header-menu">
                     <div class="header-menu-items">
-                        <div class="header-menu-item"><a href="">наши проекты</a></div>
+                        <div class="header-menu-item"><a href="{% url 'project' %}">наши проекты</a></div>
                         <div class="header-menu-item"><a href="">о компании</a></div>
-                        <div class="header-menu-item"><a href="">новости</a></div>
-                        <div class="header-menu-item"><a href="">контакты</a></div>
+                        <div class="header-menu-item"><a href="{% url 'event' %}">новости</a></div>
+                        <div class="header-menu-item"><a href="{% url 'contacts' %}">контакты</a></div>
                     </div>
                 </div>
 
                 {% block content %}
                 {% endblock %}
 
+                <div class="feedback">
+                    <a name="form"></a>
+                    <h1>Напишите нам</h1>
+                    <form action="" method="post">
+                        {% csrf_token %}
+                        {{ form }}
+                        <div style="display: flex;">
+                            <input checked type="checkbox" /> 
+                            <div>Я согласен на обработку моих персональных (в соответствии с Федеральным законом
+                            №152-ФЗ "О персональных данных")</div>
+                        </div>
+                        <input type="submit" value="Оставить заявку" style="cursor: pointer;" />
+                    </form>
+                </div>
+
                 <div class="footer" id="footer">
                     <div class="footer-wrapper">
                         <div class="footer-contacts">
                             <div class="footer-contacts-label">
-                                <a href=""><img src="static/images/logo.svg"/></a>
+                                <a href=""><img src="/static/images/logo.svg"/></a>
                             </div>
                             <div class="footer-contacts-contacts">
                                 г.Пермь, ул. Куйбышева 2-321<br>
@@ -60,29 +80,52 @@
                             </div>
                         </div>
                         <div class="footer-section">
-                            <div class="footer-section-item">видеореклама 
-                                <img class="arrow-icon" src="{% static 'images/icons/forward.svg' %}"/>
+                            <div class="footer-section-item">
+                                <a href="{% url 'video_ad' %}">
+                                    видеореклама 
+                                    <img class="arrow-icon" src="{% static 'images/icons/forward.svg' %}"/>
+                                </a>
                             </div>
-                            <div class="footer-section-item">проекты 
-                                <img class="arrow-icon" src="{% static 'images/icons/forward.svg' %}"/>
+                            <div class="footer-section-item">
+                                <a href="{% url 'project' %}">
+                                    проекты 
+                                    <img class="arrow-icon" src="{% static 'images/icons/forward.svg' %}"/>
+                                </a>
                             </div>
-                            <div class="footer-section-item">о компании 
-                                <img class="arrow-icon" src="{% static 'images/icons/forward.svg' %}"/>
+                            <div class="footer-section-item">
+                                <a href="">
+                                    о компании 
+                                    <img class="arrow-icon" src="{% static 'images/icons/forward.svg' %}"/>
+                                </a>
                             </div>
-                            <div class="footer-section-item">реклама в лифтах
-                                <img class="arrow-icon" src="{% static 'images/icons/forward.svg' %}"/>
+                            <div class="footer-section-item">
+                                <a href="{% url 'elevator' %}">
+                                    реклама в лифтах
+                                    <img class="arrow-icon" src="{% static 'images/icons/forward.svg' %}"/>
+                                </a>
                             </div>
-                            <div class="footer-section-item">новости
-                                <img class="arrow-icon" src="{% static 'images/icons/forward.svg' %}"/>
+                            <div class="footer-section-item">
+                                <a href="{% url 'event' %}">
+                                    новости
+                                    <img class="arrow-icon" src="{% static 'images/icons/forward.svg' %}"/>
+                                </a>
                             </div>
-                            <div class="footer-section-item">контакты
-                                <img class="arrow-icon" src="{% static 'images/icons/forward.svg' %}"/>
+                            <div class="footer-section-item">
+                                <a href="{% url 'contacts' %}">
+                                    контакты
+                                    <img class="arrow-icon" src="{% static 'images/icons/forward.svg' %}"/>
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
 
         </div>
+
+        <script>
+            document.getElementById('id_name').placeholder = 'Имя';
+            document.getElementById('id_phone_number').placeholder = 'Номер телефона';
+        </script>
 
         <script type="text/javascript" src="{% static 'js\menu.js' %}"></script>
     </body>

@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% load static %}
+<link href="{% static 'css\contacts.css' %}" rel="stylesheet"/>
+<link rel="stylesheet" href="https://js.arcgis.com/4.11/esri/themes/light/main.css">
+
+<div id="map">
+  <div class="banner-label">
+    <div class="label-top">
+        <div class="label-top-links">
+            <a href="{% url 'index' %}">Главная</a>
+            <div class="point"></div>
+            <a href="{% url 'contacts' %}">Контакты</a>
+        </div>
+        <div class="label-top-label">
+            контакты
+        </div>
+        <div class="contacts-list">
+            <ul>
+                <div class="li-wrapper"><li><span>г.Пермь, ул.Куйбышева 2-321</span></li></div>
+                <div class="li-wrapper"><li><span>info@ikofe.ru</span></li></div>
+                <div class="li-wrapper"><li><span>+7 (342) 287-02-07</span></li></div>
+            </ul>
+        </div>
+    </div>
+    <div class="label-bottom">
+        <a href="#form">
+            <span>заказать звонок</span>
+            <img src="{% static 'images/icons/forward.svg' %}" />
+        </a>
+    </div>
+  </div>
+</div>
+
+<script src="https://js.arcgis.com/4.11/"></script>
+<script>
+    const viewCoors = document.documentElement.clientWidth < 600? [56.23, 58.017]: [56.23 ,58.015574];
+    const coors = [56.231024, 58.015574]; 
+
+
+    require([
+      "esri/Map",
+      "esri/views/MapView",
+    ], function(Map, MapView, FeatureLayer) {
+
+    var map = new Map({
+      basemap: "osm"
+    });
+
+    var view = new MapView({
+        container: "map",
+        map: map,
+        center: viewCoors,
+        zoom: 17,
+        autoscroll: false,
+    });
+
+    view.popup.open({
+        title: `<span id="popupIColor">i</span>Kofe`,
+        content: 'Мы находимся здесь',
+        location: {
+          longitude: coors[0],
+          latitude: coors[1]
+        }
+    });
+
+    view.popup.dockOptions = {
+        breakpoint: {
+            width: 300,
+            height: 200
+        }
+    }
+  });
+
+
+</script>
+
+{% endblock %}

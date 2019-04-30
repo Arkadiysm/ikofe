@@ -11,9 +11,11 @@
             <div class="banner-window-label">
                 <span class="banner-window-label-label">нашу рекламу видно</span>
             </div>
-            <a href="">
+            <a href="#form">
                 <div class="banner-window-link">
-                    <div class="banner-window-link-words">заказать звонок</div>
+                    <div class="banner-window-link-words">
+                        заказать звонок
+                    </div>
                     <img class="banner-window-link-forward" src="{% static 'images/icons/forward.svg' %}" />
                 </div>
             </a>
@@ -21,7 +23,25 @@
     </div>
 </div>
 
-<div class="partners">
+<div class="partners" id="partnersWrapper">
+    <div class="partners-slider-button" id="partnersSliderLeftBtn" style="display: none;">
+        <img src="{% static 'images/icons/right_arrow.png' %}" />
+    </div>
+    <div class="partners-slider" id="partnersSlider">
+        <div class="partners-slide"><img src="{% static 'images/partners/audi.jpg' %}"></div>
+        <div class="partners-slide"><img src="{% static 'images/partners/domru.jpg' %}"></div>
+        <div class="partners-slide"><img src="{% static 'images/partners/sts.jpg' %}"></div>
+        <div class="partners-slide"><img src="{% static 'images/partners/toyota.jpg' %}"></div>
+        <div class="partners-slide"><img src="{% static 'images/partners/pg.jpg' %}"></div>
+        <div class="partners-slide"><img src="{% static 'images/partners/7ya.jpg' %}"></div>
+        <div class="partners-slide"><img src="{% static 'images/partners/ff.jpg' %}"></div>
+        <div class="partners-slide"><img src="{% static 'images/partners/apteka.jpg' %}"></div>
+        <div class="partners-slide"><img src="{% static 'images/partners/mdt.jpg' %}"></div>
+    </div>
+    <div class="white-block"></div>
+    <div class="partners-slider-button" id="partnersSliderRightBtn">
+        <img src="{% static 'images/icons/right_arrow.png' %}" />
+    </div>
 </div>
 
 <div class="services">
@@ -30,7 +50,7 @@
         <div class="services-label">Видеореклама</div>
         <div class="services-text">Вот уже более 7 лет, мы являемся оператором собственной сети вещания indoor-media</div>
         <a class="services-button-wrapper" href="">
-            <div class="services-button">
+            <div class="services-button btn-animation-wrapper">
                 <div class="btn-animation"></div>
                 <span>узнать больше</span>
             </div>
@@ -40,7 +60,7 @@
         <div class="services-label">Реклама в лифтах</div>
         <div class="services-text">Вот уже более 7 лет, мы являемся оператором собственной сети вещания indoor-media</div>
         <a class="services-button-wrapper" href="">
-            <div class="services-button">
+            <div class="services-button btn-animation-wrapper">
                 <div class="btn-animation"></div>
                 <span>узнать больше</span>
             </div>
@@ -50,10 +70,12 @@
 </div>
 
 <div class="story-text">
-    Наша компания основана в 2011 году. И вот уже более 7 лет, мы являемся оператором собственной сети вещания indoor-media,
-    которая охватывает более 200 жилых комплексов бизнес и премиум - класса города Пермь. А также являемся владельцами
-    более 200 видеомониторов в Перми и Пермском крае. Наши мониторы размещены в отделениях Почты России, в детских поликлиниках 
-    г. Перми, крупных торговых центрах.
+    <div class="story-text-text">
+        Наша компания основана в 2011 году. И вот уже более 7 лет, мы являемся оператором собственной сети вещания indoor-media,
+        которая охватывает более 200 жилых комплексов бизнес и премиум - класса города Пермь. А также являемся владельцами
+        более 200 видеомониторов в Перми и Пермском крае. Наши мониторы размещены в отделениях Почты России, в детских поликлиниках 
+        г. Перми, крупных торговых центрах.
+    </div>
 </div>
 
 <div class="last-events">
@@ -63,6 +85,13 @@
             <img src="{% static 'images/icons/right_arrow.png' %}" />
         </div>
         <div class="events-wrapper" id="eventsWrapper">
+            {% for event in events %}
+                <div class="event">
+                    <a href="{% url 'event' %}"><img src="static/pictures/{{ event.image }}" /></a>
+                    <p>{{ event.pub_date.date }}</p>
+                    <h2>{{ event.title }}</h2>
+                </div>
+            {% endfor %}
         </div>
         <div class="slider-button" id="slider-right-button">
             <img src="{% static 'images/icons/right_arrow.png' %}" />
@@ -100,20 +129,7 @@
     </div>
 </div>
 
-<div class="feedback">
-    <h1>Напишите нам</h1>
-    <form>
-        <input type="text" placeholder="Имя" />
-        <input type="text" placeholder="Телефон" />
-        <div style="display: flex;">
-            <input checked type="checkbox" /> 
-            <div>Я согласен на обработку моих персональных (в соответствии с Федеральным законом
-            №152-ФЗ "О персональных данных")</div>
-        </div>
-        <input type="submit" value="Оставить заявку" style="cursor: pointer;" />
-    </form>
-</div>
-
 
 <script type="text/javascript" src="{% static 'js\eventsSlider.js' %}"></script>
+<script type="text/javascript" src="{% static 'js\partnersSlider.js' %}"></script>
 {% endblock %}

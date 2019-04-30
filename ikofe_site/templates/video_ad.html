@@ -1,0 +1,286 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+<link href="{% static 'css\video.css' %}" rel="stylesheet"/>
+
+<div class="banner">
+    <div class="banner-wrapper">
+        <div class="banner-left">
+            <div class="banner-label">
+                <div class="label-top">
+                    <div class="label-top-links">
+                        <a href="{% url 'index' %}">Главная</a>
+                        <div class="point"></div>
+                        <a href="{% url 'video_ad' %}">Видеореклама</a>
+                    </div>
+                    <div class="label-top-label">
+                        размещение<br>видео рекламы<br>на мониторах
+                    </div>
+                </div>
+                <div class="label-bottom">
+                    <a href="#form">
+                        <span>заказать звонок</span>
+                        <img src="{% static 'images/icons/forward.svg' %}" />
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="banner-right">
+            <img src="{% static 'images/ikofe_banner_7.jpg' %}" />
+        </div>
+    </div>
+</div>
+
+<div class="partners" id="partnersWrapper">
+    <div class="partners-slider-button" id="partnersSliderLeftBtn" style="display: none;">
+        <img src="{% static 'images/icons/right_arrow.png' %}" />
+    </div>
+    <div class="partners-slider" id="partnersSlider">
+        <div class="partners-slide"><img src="{% static 'images/partners/audi.jpg' %}"></div>
+        <div class="partners-slide"><img src="{% static 'images/partners/domru.jpg' %}"></div>
+        <div class="partners-slide"><img src="{% static 'images/partners/sts.jpg' %}"></div>
+        <div class="partners-slide"><img src="{% static 'images/partners/toyota.jpg' %}"></div>
+        <div class="partners-slide"><img src="{% static 'images/partners/pg.jpg' %}"></div>
+        <div class="partners-slide"><img src="{% static 'images/partners/7ya.jpg' %}"></div>
+        <div class="partners-slide"><img src="{% static 'images/partners/ff.jpg' %}"></div>
+        <div class="partners-slide"><img src="{% static 'images/partners/apteka.jpg' %}"></div>
+        <div class="partners-slide"><img src="{% static 'images/partners/mdt.jpg' %}"></div>
+    </div>
+    <div class="partners-slider-button" id="partnersSliderRightBtn">
+        <img src="{% static 'images/icons/right_arrow.png' %}" />
+    </div>
+</div>
+
+<div class="story-text">
+    <div class="story-text-text">
+        Наша компания основана в 2011 году. И вот уже более 7 лет, мы являемся оператором собственной сети вещания indoor-media,
+        которая охватывает более 200 жилых комплексов бизнес и премиум - класса города Пермь. А также являемся владельцами
+        более 200 видеомониторов в Перми и Пермском крае. Наши мониторы размещены в отделениях Почты России, в детских поликлиниках 
+        г. Перми, крупных торговых центрах.
+    </div>
+</div>
+
+<div class="advantages">
+    <div class="advantages-table">
+        <div class="advantages-table-cell" style="border-right: none;">
+            <img src="{% static 'images/icons/award.svg' %}" />
+            <h2>Большой охват</h2>
+            <p>За месяц вас могут увидеть<br> до 700 000 человек </p>
+        </div>
+        <div class="advantages-table-cell" style="border-right: none;">
+            <img src="{% static 'images/icons/award.svg' %}" />
+            <h2>Все и сразу</h2>
+            <p>Вы можете разместиться на всех<br> мониторах за 1 день </p>
+        </div>
+        <div class="advantages-table-cell">
+            <img src="{% static 'images/icons/award.svg' %}" />
+            <h2>Актуально</h2>
+            <p>Видео и интернет самые<br>эффективные виды рекламы</p>
+        </div>
+    </div>
+</div>
+
+<div class="work-stages">
+    <div class="work-stages-left">
+        <h1>Этапы работы</h1>
+        <div class="work-stages-stages">Определяем вашу аудиторию</div>
+        <div class="work-stages-stages">Подготавливаем видеоролик</div>
+        <div class="work-stages-stages">Выбираем подходящие мониторы</div>
+        <div class="work-stages-stages">Условия для размещения</div>
+        <div class="work-stages-stages">Предоставляем вам статистику</div>
+    </div>
+    <div class="work-stages-right">
+        <img src="{% static 'images/ikofe_banner_8.jpg' %}" />
+    </div>
+</div>
+
+<div class="monitors-quantity">
+    <h1>Более 220 мониторов по всему городу</h1>
+    <div class="monitors-image">
+        <a href="https://www.google.com/maps/d/u/0/viewer?ll=57.9972437026288%2C56.25671138458722&z=13&mid=11T0ZV8ZfWBtVhF2cthrnQD8W7uciwt6S" 
+            class="monitors-button"><span>Перейти на карту</span></a>
+        <img src="{% static 'images/ikofe_banner_9.jpg' %}" />
+    </div>
+</div>
+
+<div class="our-projects">
+    <h1>Наши проекты</h1>
+    <div class="projects">
+        <div class="slider-button" id="slider-left-button" style="display: none;">
+            <img src="{% static 'images/icons/right_arrow.png' %}" />
+        </div>
+        <div class="projects-wrapper" id="projectsWrapper">
+            {% for project in projects %}
+                <div class="project">
+                    {% if project.youtube_link %}
+                        <iframe width="580" height="290" src="https://www.youtube.com/embed/{{ project.youtube_link }}" 
+                            frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen></iframe>
+                    {% else %}
+                        <a href="{% url 'project' %}"><img src="static/pictures/{{ project.image }}" /></a>
+                    {% endif %}
+                    <p>{{ project.pub_date.date }}</p>
+                    <h2><a href="project/articles/{{ project.id }}">{{ project.title }}</a></h2>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="slider-button" id="slider-right-button">
+            <img src="{% static 'images/icons/right_arrow.png' %}" />
+        </div>
+    </div>
+</div>
+
+<div class="prices">
+    <h1>Сколько стоит размещение</h1>
+    <div class="price">
+        <div class="price-left">
+            <img src="{% static 'images/ikofe_price_1.jpg' %}" />
+        </div>
+        <div class="price-right">
+            <div class="price-right-innerWRapper">
+                <h2>Видео реклама на "Почте России"</h2>
+                <div class="audience-coverage">
+                    <span class="audience-coverage-label">Охват аудитории:</span>
+                    <span class="audience-coverage-quantity">от 20 до 60 тыс чел/мес</span>
+                </div>
+                <ul>
+                    <div class="li-wrapper"><li><span>Охват аудитории на 1 почте от 20 до 60 тыс человек в месяц</span></li></div>
+                    <div class="li-wrapper"><li><span>22 монитора в 20 отделениях Почты в каждом районе города</span></li></div>
+                    <div class="li-wrapper"><li><span>Посетитель проводит от 15 до 40 мин</span></li></div>
+                    <div class="li-wrapper"><li><span>Каждый посетитель видит ролик от 4 раз</span></li></div>
+                </ul>
+                <a href="#form" class="price-button">
+                    <span>От 4,000 Р / месяц</span>
+                    <img src="{% static 'images/icons/forward.svg' %}" />
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="price">
+        <div class="price-left">
+            <img src="{% static 'images/ikofe_price_2.jpg' %}" />
+        </div>
+        <div class="price-right">
+            <div class="price-right-innerWRapper">
+                <h2>Видео реклама в сетях магазинов</h2>
+                <div class="audience-coverage">
+                    <span class="audience-coverage-label">Охват аудитории:</span>
+                    <span class="audience-coverage-quantity">от 20 до 60 тыс чел/мес</span>
+                </div>
+                <ul>
+                    <div class="li-wrapper"><li><span>Средняя проходимость в 1 магазине до 50 тыс человек в месяц</span></li></div>
+                    <div class="li-wrapper"><li><span>10 сетевых магазинов (Пятерочка, Магнит, Светофор)</span></li></div>
+                    <div class="li-wrapper"><li><span>Минимальные вложения при большой проходимости</span></li></div>
+                    <div class="li-wrapper"><li><span>Разнообразная аудитория</span></li></div>
+                </ul>
+                <a href="#form"class="price-button">
+                    <span>От 3,000 Р / месяц</span>
+                    <img src="{% static 'images/icons/forward.svg' %}" />
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="price">
+        <div class="price-left">
+            <img src="{% static 'images/ikofe_price_3.jpg' %}" />
+        </div>
+        <div class="price-right">
+            <div class="price-right-innerWRapper">
+                <h2>Видео реклама на уличных экранах</h2>
+                <div class="audience-coverage">
+                    <span class="audience-coverage-label">Охват аудитории:</span>
+                    <span class="audience-coverage-quantity">от 20 до 60 тыс чел/мес</span>
+                </div>
+                <ul>
+                    <div class="li-wrapper"><li><span>Охват аудитории на 1 почте от 20 до 60 тыс человек в месяц</span></li></div>
+                    <div class="li-wrapper"><li><span>22 монитора в 20 отделениях Почты в каждом районе города</span></li></div>
+                    <div class="li-wrapper"><li><span>Посетитель проводит от 15 до 40 мин</span></li></div>
+                    <div class="li-wrapper"><li><span>Каждый посетитель видит ролик от 4 раз</span></li></div>
+                </ul>
+                <a href="#form" class="price-button">
+                    <span>От 8,000 Р / месяц</span>
+                    <img src="{% static 'images/icons/forward.svg' %}" />
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="price">
+        <div class="price-left">
+            <img src="{% static 'images/ikofe_price_4.jpg' %}" />
+        </div>
+        <div class="price-right">
+            <div class="price-right-innerWRapper">
+                <h2>Реклама в маршрутных автобусах</h2>
+                <div class="audience-coverage">
+                    <span class="audience-coverage-label">Охват аудитории:</span>
+                    <span class="audience-coverage-quantity">до 2,7 млн чел/мес</span>
+                </div>
+                <ul>
+                    <div class="li-wrapper"><li><span>90 мониторов на 15 маршрутах</span></li></div>
+                    <div class="li-wrapper"><li><span>Студенты, пенсионеры, рабочий класс</span></li></div>
+                    <div class="li-wrapper"><li><span>Широкая адресная программа</span></li></div>
+                </ul>
+                <a href="#form" class="price-button">
+                    <span>От 6,000 Р / месяц</span>
+                    <img src="{% static 'images/icons/forward.svg' %}" />
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="price">
+        <div class="price-left">
+            <img src="{% static 'images/ikofe_price_5.jpg' %}" />
+        </div>
+        <div class="price-right">
+            <div class="price-right-innerWRapper">
+                <h2>Видео реклама в детских поликлиниках</h2>
+                <div class="audience-coverage">
+                    <span class="audience-coverage-label">Охват аудитории:</span>
+                    <span class="audience-coverage-quantity">от 180 тыс чел/мес</span>
+                </div>
+                <ul>
+                    <div class="li-wrapper"><li><span>69 мониторов в 12 поликлиниках</span></li></div>
+                    <div class="li-wrapper"><li><span>Мониторы со звуком</span></li></div>
+                    <div class="li-wrapper"><li><span>Преимущественно мамы и папы с детьми</span></li></div>
+                </ul>
+                <a href="#form" class="price-button">
+                    <span>От 7,000 Р / месяц</span>
+                    <img src="{% static 'images/icons/forward.svg' %}" />
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="price">
+        <div class="price-left">
+            <img src="{% static 'images/ikofe_price_6.jpg' %}" />
+        </div>
+        <div class="price-right">
+            <div class="price-right-innerWRapper">
+                <h2>Видео реклама на автовокзале</h2>
+                <div class="audience-coverage">
+                    <span class="audience-coverage-label">Охват аудитории:</span>
+                    <span class="audience-coverage-quantity">от 170 тыс чел/мес</span>
+                </div>
+                <ul>
+                    <div class="li-wrapper"><li><span>2 монитора у входа и выхода</span></li></div>
+                    <div class="li-wrapper"><li><span>Преимущественно студенты, командировочные</span></li></div>
+                </ul>
+                <a href="#form" class="price-button">
+                    <span>От 9,000 Р / месяц</span>
+                    <img src="{% static 'images/icons/forward.svg' %}" />
+                </a>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script type="text/javascript" src="{% static 'js\eventsSlider.js' %}"></script>
+<script type="text/javascript" src="{% static 'js\partnersSlider.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,124 @@
+#map {
+    width: 100%;
+    height: 700px;
+    z-index: 1 !important;
+    position: relative;
+}
+
+.banner-label {
+    position: absolute;
+    left: 5%;
+    bottom: 30%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 80px;
+    width: 400px;
+    height: 400px;
+    background-color: #ffffff;
+    padding-top: 32px;
+    z-index: 2;
+}
+
+.label-top {
+    display: flex;
+    flex-direction: column;
+    height: 80%;
+    padding-left: 32px;
+}
+
+.label-top-links {
+    margin-bottom: 16px;
+}
+
+.label-top-links a {
+    font-size: 12px;
+    color: gray;
+}
+
+.label-top-links a:hover {
+    text-decoration: underline;
+}
+
+.label-top-links .point {
+    display: inline-block;
+    background-color: gray;
+    width: 2px;
+    height: 2px;
+    border-radius: 1px;
+    vertical-align: middle;
+}
+
+.label-top-label {
+    font-size: 32px;
+    text-transform: uppercase;
+    font-weight: 600;
+    line-height: 40px;
+}
+
+.label-top ul {
+    margin-left: 15px;
+    padding: 0;
+    list-style-type: square;
+    color: #E6177E;
+}
+
+.label-top .li-wrapper {
+    display: flex;
+    align-items: center;
+    width: 80%;
+    height: 45px;
+    border-bottom: 1px solid rgba(123, 124, 124, 0.3);
+}
+
+.label-top .li-wrapper:last-child {
+    border-bottom: none;
+}
+
+.li-wrapper li span{
+    font-size: 14px;
+    color: #000000;
+}
+
+.label-bottom {
+    height: 20%;
+    padding-left: 32px;
+    padding-right: 32px;
+    border-top: 1px solid rgba(123, 124, 124, 0.3);
+}
+
+.label-bottom a {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.label-bottom a span {
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #E6177E;
+    font-weight: 600;
+}
+
+#popupIColor {
+    color: #E6177E;
+}
+
+@media screen and ( max-device-width: 900px ) {
+
+    .banner-label {
+        width: 350px;
+        height: 350px;
+        top: 5% !important;
+        left: 1%;
+        background-color: rgba(255, 255, 255, 0.8);
+    }
+}
+
+@media screen and ( max-device-width: 900px ) {
+    .banner-label {
+        left: 5%;
+    }
+}

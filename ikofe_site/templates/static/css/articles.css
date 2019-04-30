@@ -1,0 +1,288 @@
+.top-banner {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: #E6177E;
+    margin-bottom: 40px;
+}
+
+.top-banner-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 600px;
+    height: 300px;
+    display: flex;
+}
+
+.top-banner-navigation {
+    margin-bottom: 16px;
+}
+
+.top-banner-navigation a {
+    font-size: 12px;
+    color: #ffffff;
+}
+
+.top-banner-navigation a:hover {
+    text-decoration: underline;
+}
+
+.top-banner-navigation .point {
+    display: inline-block;
+    background-color: #ffffff;
+    width: 2px;
+    height: 2px;
+    border-radius: 1px;
+    vertical-align: middle;
+}
+
+.top-banner h1 {
+    font-size: 32px;
+    font-weight: 600;
+    color: #ffffff;
+    text-transform: uppercase;
+    line-height: 40px;
+}
+
+.top-banner-date {
+    margin-top: 16px;
+    margin-bottom: 24px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+
+.image-wrapper {
+    max-width: 1200px;
+    display: flex;
+    align-self: center;
+    margin-bottom: 120px;
+}
+
+.image-wrapper img {
+    width: 100%;
+}
+
+
+.description {
+    width: 600px;
+    align-self: center;
+    font-size: 18px;
+    line-height: 26px;
+    margin-bottom: 120px;
+}
+
+
+.SN-links {
+    width: 600px;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 120px;
+}
+
+.SN-links p {
+    font-size: 12px;
+    color: #666666;
+}
+
+.SN-links-links {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+}
+
+.SN-link {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 50%;
+    height: 60px;
+    border: 2px solid rgba(123, 124, 124, 0.2);
+    cursor: pointer;
+}
+
+.SN-link img {
+    margin-left: 20px;
+}
+
+.SN-link:hover {
+    background-color: #E6177E;
+    border: none !important;
+}
+
+.vk-link {
+    border-left: none;
+}
+
+
+.last-events {
+    display: flex;
+    width: 100%;
+    height: 500px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 120px;
+}
+
+.last-events h1 {
+    margin-bottom: 40px;
+}
+
+.events {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.slider-button {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.9);
+    width: 120px;
+    height: 500px;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.slider-button:first-child {
+    left: 0;
+}
+
+.slider-button:last-child {
+    right: 0;
+}
+
+.slider-button img {
+    position: relative;
+    top: 25%;
+    width: 50px;
+}
+
+#slider-left-button {
+    transform: scaleX(-1);
+    left: -20;
+}
+
+.events-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    transition: left 1s;
+    left: 80px;
+}
+
+.events-wrapper .event {
+    position: relative;
+    max-width: 580px;
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+
+}
+
+.event a {
+    display: flex;
+    width: 580px;
+}
+
+.event a img {
+    width: 100%;
+}
+
+.events p {
+    font-size: 12px;
+    color: #666666;
+    margin-bottom: 0;
+}
+
+.events h2 {
+    font-size: 24px;
+    margin-top: 20px;
+    line-height: 36px;
+    font-weight: 400;
+}
+
+
+
+@media screen and ( max-device-width: 600px ) {
+
+    .top-banner {
+        margin-bottom: 60px;
+    }
+
+    .top-banner-wrapper {
+        width: 100%;
+        padding-left: 5%;
+        padding-right: 25%;
+    }
+
+    .top-banner h1 {
+        font-size: 28px;
+        text-transform: uppercase;
+        line-height: 32px;
+    }
+
+    .image-wrapper img {
+        width: 100%;
+    }
+
+    .image-wrapper iframe {
+        width: 300px;
+        height: 150px;
+    }
+
+    .description {
+        width: 100%;
+        padding-left: 5%;
+        padding-right: 5%;
+        font-size: 14px;
+        margin-bottom: 60px;
+    }
+
+    .image-wrapper {
+        margin-bottom: 60px;
+    }
+
+    .SN-links {
+        width: 100%;
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .last-events {
+        margin-bottom: 100px;
+        height: auto;
+    }
+
+    .events {
+        position: relative;
+    }
+
+    .slider-button {
+        height: 60px;
+        width: 60px;
+        top: 17%;   
+    }
+
+    .slider-button img{
+        width: 30px;
+    }
+
+    .events-wrapper {
+        left: 30px;
+    }
+
+    .event a {
+        width: 100%;
+    }
+
+    .event a img {
+        width: 310px;
+    }
+
+}

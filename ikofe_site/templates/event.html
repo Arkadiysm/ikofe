@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% load static %}
+{% load tags %}
+<link href="{% static 'css\event.css' %}" rel="stylesheet"/>
+
+<div class="top-banner">
+    <div class="top-banner-wrapper">
+        <div class="top-banner-navigation">
+            <a href="{% url 'index' %}">Главная</a>
+            <div class="point"></div>
+            <a href="{% url 'event' %}">Новости</a>
+        </div>
+        <h1>Последние события</h1>
+    </div>
+</div>
+
+<div class="events-wrapper">
+    {% for event in events %}
+        <div class="event">
+            <div class="event-img-link" href="">
+                <img src="/static/pictures/{{ event.image }}" />
+            </div>
+            <p>{{ event.pub_date.date }}</p>
+            <a class="event-title" href="event/articles/{{ event.id }}"><h2>{{ event.title }}</h2></a>
+        </div>
+    {% endfor %}
+</div>
+
+<div class="events-nav">
+    <a class="events-nav-left-btn" id="navigationLeftBtn">
+        <img src="/static/images/icons/right_arrow.png" />
+    </a>
+    <div class="pages-nav">
+        {% for page in pages_quantity %}
+            <div class="pages-nav-link"><a href="/event/{{ page }}">{{ page }}</a></div>
+        {% endfor %}
+    </div>
+    <a class="events-nav-right-btn" id="navigationRightBtn">
+        <img src="/static/images/icons/right_arrow.png" />
+    </a>
+</div>
+
+<script src="{% static 'js/navigationButtons.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% load static %}
+<link href="{% static 'css\project.css' %}" rel="stylesheet"/>
+
+<div class="top-banner">
+    <div class="top-banner-wrapper">
+        <div class="top-banner-navigation">
+            <a href="{% url 'index' %}">Главная</a>
+            <div class="point"></div>
+            <a href="{% url 'project' %}">Проекты</a>
+        </div>
+        <h1>Наши проекты</h1>
+    </div>
+</div>
+
+<div class="project-categories">
+    <a href="{% url 'project' %}">Все</a>
+    <a href="/project/video_ad">Видеореклама</a>
+    <a href="/project/elevator">Реклама в лифтах</a>
+</div>
+
+<div class="projects-wrapper">
+    {% for project in projects %}
+        <div class="project">
+            {% if project.youtube_link %}
+                <iframe width="580" height="290" src="https://www.youtube.com/embed/{{ project.youtube_link }}" 
+                    frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen></iframe>
+            {% else %}
+                <img src="/static/pictures/{{ project.image }}" />
+            {% endif %}
+            <p>{{ project.pub_date.date }}</p>
+            <a class="project-title" href="/project/articles/{{ project.id }}"><h2>{{ project.title }}</h2></a>
+        </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

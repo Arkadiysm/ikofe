@@ -1,0 +1,243 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+<link href="{% static 'css\elevator.css' %}" rel="stylesheet"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+				
+
+<div class="banner">
+    <div class="banner-left">
+        <div class="banner-label">
+            <div class="label-top">
+                <div class="label-top-links">
+                    <a href="{% url 'index' %}">Главная</a>
+                    <div class="point"></div>
+                    <a href="{% url 'elevator' %}">Реклама в лифтах</a>
+                </div>
+                <div class="label-top-label">
+                    размещение<br>рекламы<br>в лифтах
+                </div>
+            </div>
+            <div class="label-bottom">
+                <a href="#form">
+                    <span>заказать звонок</span>
+                    <img src="{% static 'images/icons/forward.svg' %}" />
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="banner-right">
+        <img src="{% static 'images/ikofe_banner_4.jpg' %}" />
+    </div>
+</div>
+
+<div class="partners" id="partnersWrapper">
+    <div class="partners-slider-button" id="partnersSliderLeftBtn" style="display: none;">
+        <img src="{% static 'images/icons/right_arrow.png' %}" />
+    </div>
+    <div class="partners-slider" id="partnersSlider">
+        <div class="partners-slide"><img src="{% static 'images/partners/audi.jpg' %}"></div>
+        <div class="partners-slide"><img src="{% static 'images/partners/domru.jpg' %}"></div>
+        <div class="partners-slide"><img src="{% static 'images/partners/sts.jpg' %}"></div>
+        <div class="partners-slide"><img src="{% static 'images/partners/toyota.jpg' %}"></div>
+        <div class="partners-slide"><img src="{% static 'images/partners/pg.jpg' %}"></div>
+        <div class="partners-slide"><img src="{% static 'images/partners/7ya.jpg' %}"></div>
+        <div class="partners-slide"><img src="{% static 'images/partners/ff.jpg' %}"></div>
+        <div class="partners-slide"><img src="{% static 'images/partners/apteka.jpg' %}"></div>
+        <div class="partners-slide"><img src="{% static 'images/partners/mdt.jpg' %}"></div>
+    </div>
+    <div class="white-block"></div>
+    <div class="partners-slider-button" id="partnersSliderRightBtn">
+        <img src="{% static 'images/icons/right_arrow.png' %}" />
+    </div>
+</div>
+
+<div class="story-text">
+    <div class="story-text-text">
+        Наша компания основана в 2011 году. И вот уже более 7 лет, мы являемся оператором собственной сети вещания indoor-media,
+        которая охватывает более 200 жилых комплексов бизнес и премиум - класса города Пермь. А также являемся владельцами
+        более 200 видеомониторов в Перми и Пермском крае. Наши мониторы размещены в отделениях Почты России, в детских поликлиниках 
+        г. Перми, крупных торговых центрах.
+    </div>
+</div>
+
+<div class="achievements">
+    <h1>Более 600 стендов в домах Перми</h1>
+    <div class="achievements-table-wrapper">
+        <div class="achievements-table">
+            <div class="achievements-table-cell" style="border-right: none; border-bottom: none;">
+                <img src="{% static 'images/icons/award.svg' %}" />
+                <p>100% покрытие центральной<br> части города </p>
+            </div>
+            <div class="achievements-table-cell" style="border-right: none; border-bottom: none;">
+                <img src="{% static 'images/icons/award.svg' %}" />
+                <p>Размещение рекламы без<br> посредников </p>
+            </div>
+            <div class="achievements-table-cell" style="border-bottom: none;">
+                <img src="{% static 'images/icons/award.svg' %}" />
+                <p>0,04 Р - цена одного контакта со<br> стендом</p>
+            </div>
+            <div class="achievements-table-cell" style="border-right: none;">
+                <img src="{% static 'images/icons/award.svg' %}" />
+                <p>3 дня до первых откликов после<br> размещения</p>
+            </div>
+            <div class="achievements-table-cell" style="border-right: none;">
+                <img src="{% static 'images/icons/award.svg' %}" />
+                <p>Скидки на длительное <br>размещение</p>
+            </div>
+            <div class="achievements-table-cell">
+                <img src="{% static 'images/icons/award.svg' %}" />
+                <p>Самый крупный собственник<br> Премиум-стендов</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="work-stages">
+    <div class="work-stages-left">
+        <h1>Этапы работы</h1>
+        <div class="work-stages-stages">Производим расчеты</div>
+        <div class="work-stages-stages">Формируем медиаплан</div>
+        <div class="work-stages-stages">Разрабатываем дизайн</div>
+        <div class="work-stages-stages">Отдаем макеты в печать</div>
+        <div class="work-stages-stages">Размещаем рекламу</div>
+        <div class="work-stages-stages">Предоставляем отчет</div>
+    </div>
+    <div class="work-stages-right">
+        <img src="{% static 'images/ikofe_banner_5.jpg' %}" />
+    </div>
+</div>
+
+<div class="prices">
+    <h1>Сколько стоит размещение</h1>
+    <div class="price">
+        <div class="price-left">
+            <img src="{% static 'images/ikofe_price_1.jpg' %}" />
+        </div>
+        <div class="price-right">
+            <div class="price-right-innerWRapper">
+                <h2>Видео реклама на "Почте России"</h2>
+                <ul>
+                    <div class="li-wrapper"><li><span>Охват аудитории на 1 почте от 20 до 60 тыс человек в месяц</span></li></div>
+                    <div class="li-wrapper"><li><span>22 монитора в 20 отделениях Почты в каждом районе города</span></li></div>
+                    <div class="li-wrapper"><li><span>Посетитель проводит от 15 до 40 мин</span></li></div>
+                    <div class="li-wrapper"><li><span>Каждый посетитель видит ролик от 4 раз</span></li></div>
+                </ul>
+                <a href="#form" class="price-button">
+                    <span>От 4,000 Р / месяц</span>
+                    <img src="{% static 'images/icons/forward.svg' %}" />
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="price">
+        <div class="price-left">
+            <img src="{% static 'images/ikofe_price_2.jpg' %}" />
+        </div>
+        <div class="price-right">
+            <div class="price-right-innerWRapper">
+                <h2>Видео реклама в сетях магазинов</h2>
+                <ul>
+                    <div class="li-wrapper"><li><span>Средняя проходимость в 1 магазине до 50 тыс человек в месяц</span></li></div>
+                    <div class="li-wrapper"><li><span>10 сетевых магазинов (Пятерочка, Магнит, Светофор)</span></li></div>
+                    <div class="li-wrapper"><li><span>Минимальные вложения при большой проходимости</span></li></div>
+                    <div class="li-wrapper"><li><span>Разнообразная аудитория</span></li></div>
+                </ul>
+                <a href="#form" class="price-button">
+                    <span>От 3,000 Р / месяц</span>
+                    <img src="{% static 'images/icons/forward.svg' %}" />
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="price">
+        <div class="price-left">
+            <img src="{% static 'images/ikofe_price_3.jpg' %}" />
+        </div>
+        <div class="price-right">
+            <div class="price-right-innerWRapper">
+                <h2>Видео реклама на уличных экранах</h2>
+                <ul>
+                    <div class="li-wrapper"><li><span>Охват аудитории на 1 почте от 20 до 60 тыс человек в месяц</span></li></div>
+                    <div class="li-wrapper"><li><span>22 монитора в 20 отделениях Почты в каждом районе города</span></li></div>
+                    <div class="li-wrapper"><li><span>Посетитель проводит от 15 до 40 мин</span></li></div>
+                    <div class="li-wrapper"><li><span>Каждый посетитель видит ролик от 4 раз</span></li></div>
+                </ul>
+                <a href="#form" class="price-button">
+                    <span>От 8,000 Р / месяц</span>
+                    <img src="{% static 'images/icons/forward.svg' %}" />
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="house-placement" style="background-image: url({% static 'images/ikofe_banner_6.jpg' %});">
+    <h1>Мы размещаемся в ЖК Премиум-класса</h1>
+    <div class="house-placement-inscription">
+        Предлагаемые комплексы относятся к Buisness, Premium и Delux. 
+        Предлагаемые комплексы относятся к Buisness, Premium и Delux категориям.
+        Предлагаемые комплексы относятся к Buisness, Premium и Delux категориям.
+    </div>
+    <div class="house-placement-button">
+        <a href="#form">
+            <span>Хочу разместить рекламу</span>
+        </a>
+    </div>
+</div>
+
+<script type="text/javascript" src="{% static 'js\partnersSlider.js' %}"></script>
+<script>
+if(document.documentElement.clientWidth < 500) {
+        var sliderPositionCounter = 20; 
+        var clientX = 0;
+        var slider = document.getElementsByClassName('achievements-table')[0];
+
+        document.onmousemove = function(event) {
+            throttle(function(){
+                clientX = event.clientX;
+            }, 300);
+        }
+
+        slider.onmousedown = function(event) {
+            let X = event.clientX;
+            console.log(X - clientX)
+            setTimeout(function(){
+                if( X - clientX > 150) {
+                    if(sliderPositionCounter - 310 <= -1551) return false;
+                    pushSlider(slider, -310, isCounting=false);
+                }
+                else if (X - clientX < 150) {
+                    if(sliderPositionCounter + 310 >= 21) return false;
+                    pushSlider(slider, 310, isCounting=false);
+                }
+                else return false;
+            }, 300);
+        }
+
+        slider.onmouseup = function(event) {
+            event.stopImmediatePropagation();
+        }
+
+        function getElemLeft(elem) {
+            let left = window.getComputedStyle(elem).left;
+            
+            left = left.split("")
+                        .slice(0, -2)
+                        .join("");
+            return +left; 
+        }
+
+
+    function pushSlider(elem, dist) {
+        let left = getElemLeft(elem);
+        slider.style.left = `${left+dist}px`;
+
+        sliderPositionCounter += dist;
+    }
+}
+</script>
+
+{% endblock %}

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="9px"
+   height="16px"
+   viewBox="0 0 9 16"
+   version="1.1"
+   id="svg70"
+   sodipodi:docname="Facebook_white.svg"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)">
+  <metadata
+     id="metadata76">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>Facebook</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs74" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1366"
+     inkscape:window-height="705"
+     id="namedview72"
+     showgrid="false"
+     inkscape:zoom="14.75"
+     inkscape:cx="4.5"
+     inkscape:cy="8"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg70" />
+  <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+  <title
+     id="title61">Facebook</title>
+  <desc
+     id="desc63">Created with Sketch.</desc>
+  <g
+     id="Page-1"
+     stroke="none"
+     stroke-width="1"
+     fill="none"
+     fill-rule="evenodd"
+     style="fill:#ffffff">
+    <g
+       id="iKofe_start_m"
+       transform="translate(-136.000000, -619.000000)"
+       fill="#000000"
+       style="fill:#ffffff">
+      <g
+         id="Group-2"
+         transform="translate(0.000000, 587.000000)"
+         style="fill:#ffffff">
+        <g
+           id="Facebook"
+           transform="translate(132.000000, 32.000000)"
+           style="fill:#ffffff">
+          <path
+             d="M9.65215133,3.86402018 C9.65215133,3.65706222 9.66171896,3.49675991 9.68116174,3.38352132 C9.70053618,3.27011271 9.7446156,3.1585744 9.81302412,3.04846433 C9.88133014,2.93842227 9.99193872,2.8624538 10.144679,2.82035489 C10.2976244,2.77818797 10.5008681,2.75717252 10.7546152,2.75717252 L12.1398365,2.75717252 L12.1398365,0 L9.92530704,0 C8.64392862,0 7.72362555,0.302547656 7.16426115,0.907642967 C6.6049651,1.5128743 6.32535124,2.40436462 6.32535124,3.58245397 L6.32535124,5.24260644 L4.66666667,5.24260644 L4.66666667,7.999983 L6.32524873,7.999983 L6.32524873,16 L9.65211716,16 L9.65211716,8.000017 L11.8665099,8.000017 L12.1592109,5.24264045 L9.65215133,5.24264045 L9.65215133,3.86402018 Z"
+             id="facebook"
+             style="fill:#ffffff" />
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
