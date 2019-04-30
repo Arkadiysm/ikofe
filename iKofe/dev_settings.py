@@ -27,6 +27,16 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'ikofe.ru/']
 
+# mail settings
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'ikofe.postman@gmail.com'
+EMAIL_HOST_PASSWORD = 'Immunale123'
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+DEFAULT_TO_EMAIL = 'info@ikofe.ru'
+SERVER_EMAIL = EMAIL_HOST_USER
+
 
 # Application definition
 

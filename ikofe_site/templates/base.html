@@ -13,6 +13,13 @@
         <script type="text/javascript" src="{% static 'js\throttle.js' %}"></script>
     </head>
     <body>
+
+        {% if wasMailSent %}
+            <script>
+                alert('Спасибо ваша заявка была принята,\n Вам перезвонят в ближайшее время');
+            </script>
+        {% endif %}
+        
         <div class="page-wrapper">
 
                 <div class="mobile-menu" id="mobileMenu" style="display: none;">

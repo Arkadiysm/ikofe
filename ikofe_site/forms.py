@@ -1,5 +1,6 @@
 from django import forms
 from .mail import create_and_send_mail
+from iKofe.settings import DEFAULT_TO_EMAIL
 
 
 class IkofeForm(forms.Form):
@@ -10,13 +11,13 @@ class IkofeForm(forms.Form):
 def form_handler(req, form):
     form = form(req.POST)
     if form.is_valid():
-        name, number = form.name, form.phone_number
+        name, number = form.cleaned_data['name'], form.cleaned_data['phone_number']
         text = '''
             Имя отправителя: {0}, \n
             Номер отправителя: {1}
         '''.format(name, number)
 
-        create_and_send_mail('', 'Заявка', text)
+        create_and_send_mail(DEFAULT_TO_EMAIL, 'Заявка ikofe', text)
         return True
     else:
         return False
