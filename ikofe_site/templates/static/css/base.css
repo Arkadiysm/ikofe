@@ -26,6 +26,7 @@ h1 {
     max-width: 1920px;
     display: flex;
     flex-direction: column;
+    overflow-x: hidden;
 }
 
 .header {
@@ -367,6 +368,10 @@ h1 {
 
 @media screen and (max-device-width: 500px) {
 
+    .page-wrapper {
+        max-width: 100%;
+    }
+
     .mobile-menu {
         position: fixed;
         top: 60;
@@ -484,6 +489,7 @@ h1 {
 
     .footer-section {
         justify-content: center;
+        flex-direction: column;
         align-items: center;
         width: 100%;
         height: auto;
