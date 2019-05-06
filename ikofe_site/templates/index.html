@@ -87,7 +87,7 @@
         <div class="events-wrapper" id="eventsWrapper">
             {% for event in events %}
                 <div class="event">
-                    <a href="{% url 'event' %}"><img src="static/pictures/{{ event.image }}" /></a>
+                    <a href="event/articles/{{ event.id }}"><img src="static/pictures/{{ event.image }}" /></a>
                     <p>{{ event.pub_date.date }}</p>
                     <h2>{{ event.title }}</h2>
                 </div>

@@ -15,7 +15,7 @@ class Event(models.Model):
     id = models.AutoField(primary_key=True)
     title = models.CharField(max_length=150)
     pub_date = models.DateTimeField(default=timezone.now)
-    description = models.CharField(max_length=10000)
+    description = models.TextField(max_length=10000)
     image = models.ImageField(storage=UUIDFileStorage())
 
     def __str__(self):
@@ -54,9 +54,9 @@ class Project(models.Model):
     title = models.CharField(max_length=150)
     pub_date = models.DateTimeField(default=timezone.now)
     category = models.CharField(max_length=50, choices=categories, default='video_ad')
-    description = models.CharField(max_length=10000)
-    image = models.ImageField(storage=UUIDFileStorage(), blank=True)
-    youtube_link = models.CharField(max_length=150, blank=True)
+    description = models.TextField(max_length=10000)
+    image = models.ImageField(storage=UUIDFileStorage(), blank=True, default="")
+    youtube_link = models.CharField(max_length=150, blank=True, default="")
 
 
     @staticmethod

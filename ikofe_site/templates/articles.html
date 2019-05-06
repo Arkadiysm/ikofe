@@ -13,7 +13,7 @@
             <div class="point"></div>
             <a href="{% url 'project' %}">Проекты</a>
         </div>
-        <h1>{{ article.title }}</h1>
+        <h1>{{ article.title | safe }}</h1>
         <span class="top-banner-date">{{ article.pub_date.date }}</span>
     </div>
 </div>
@@ -29,7 +29,7 @@
 </div>
 
 <div class="description">
-    {{ article.description }}
+    {{ article.description | safe }}
 </div>
 
 <div class="SN-links">
@@ -58,9 +58,9 @@
         <div class="events-wrapper" id="eventsWrapper">
             {% for event in events %}
                 <div class="event">
-                    <a href="{% url 'event' %}"><img src="/static/pictures/{{ event.image }}" /></a>
+                    <a href="/event/articles/{{ event.id }}"><img src="/static/pictures/{{ event.image }}" /></a>
                     <p>{{ event.pub_date.date }}</p>
-                    <h2>{{ event.title }}</h2>
+                    <h2>{{ event.title | safe }}</h2>
                 </div>
             {% endfor %}
         </div>

@@ -14,5 +14,6 @@ urlpatterns = [
     path('project/articles/<int:value>', views.project_articles, name='project/articles/<int:value>'),
     path('event/articles/<int:value>', views.event_articles),
     path('contacts', views.contacts, name='contacts'),
+    path('about_us', views.about_us, name='about_us'),
     path('not_found', views.not_found, name='not_found'),
 ]

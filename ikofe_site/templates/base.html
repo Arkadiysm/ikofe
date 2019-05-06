@@ -50,7 +50,7 @@
                 <div id="headerMenu" class="header-menu">
                     <div class="header-menu-items">
                         <div class="header-menu-item"><a href="{% url 'project' %}">наши проекты</a></div>
-                        <div class="header-menu-item"><a href="">о компании</a></div>
+                        <div class="header-menu-item"><a href="{% url 'about_us' %}">о компании</a></div>
                         <div class="header-menu-item"><a href="{% url 'event' %}">новости</a></div>
                         <div class="header-menu-item"><a href="{% url 'contacts' %}">контакты</a></div>
                     </div>
@@ -100,7 +100,7 @@
                                 </a>
                             </div>
                             <div class="footer-section-item">
-                                <a href="">
+                                <a href="{% url 'about_us' %}">
                                     о компании 
                                     <img class="arrow-icon" src="{% static 'images/icons/forward.svg' %}"/>
                                 </a>

@@ -146,6 +146,21 @@ def event_articles(request, value):
         return not_found(request)
 
 
+def about_us(request):
+    was_mail_sent = False
+    if request.method == 'POST':
+        if form_handler(request, IkofeForm):
+            was_mail_sent = True
+
+    context = {
+        'title': 'О нас',
+        'form': IkofeForm,
+        'wasMailSent': was_mail_sent
+    }
+
+    return render(request, 'about_us.html', context=context)
+
+
 def not_found(request):
     return render(request, '404.html')
 
