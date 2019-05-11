@@ -270,6 +270,16 @@
     align-items: flex-start;
 }
 
+.audience-coverage {
+    font-size: 14px;
+}
+
+.audience-coverage-quantity {
+    color: #E6177E;
+    font-weight: 600;
+}
+
+
 .price-right h2 {
     font-size: 20px;
     margin-bottom: 30px;

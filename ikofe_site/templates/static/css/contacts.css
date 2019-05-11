@@ -79,6 +79,22 @@
     color: #000000;
 }
 
+.SN-links {
+    justify-content: space-around;
+}
+
+.SN-links a {
+    display: flex;
+    justify-content: center;
+    width: 25%;
+    height: 70%;
+    border-right: 1px solid rgba(123, 124, 124, 0.5);
+}
+
+.SN-links a:last-child {
+    border-right: none;
+}
+
 .label-bottom {
     height: 20%;
     padding-left: 32px;
@@ -109,16 +125,46 @@
 @media screen and ( max-device-width: 900px ) {
 
     .banner-label {
+        padding-top: 12px;
         width: 350px;
         height: 350px;
         top: 5% !important;
         left: 1%;
         background-color: rgba(255, 255, 255, 0.8);
     }
+
+    .label-top .li-wrapper {
+        height: 40px;
+    }
 }
 
 @media screen and ( max-device-width: 900px ) {
     .banner-label {
         left: 5%;
+    }
+}
+
+@media screen and ( max-device-width: 600px ) {
+    .banner-label {
+        width: 100%;
+        left: 0;
+        top: 0 !important;
+        background-color: #ffffff; 
+    }
+
+    .label-top-label {
+        font-size: 28px;
+    }
+
+    .li-wrapper li span {
+        font-size: 12px;
+    }
+
+    .label-bottom a span {
+        font-size: 12px;
+    }
+
+    #map {
+        height: 650px;
     }
 }

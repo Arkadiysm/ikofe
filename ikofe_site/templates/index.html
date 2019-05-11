@@ -89,42 +89,12 @@
                 <div class="event">
                     <a href="event/articles/{{ event.id }}"><img src="static/pictures/{{ event.image }}" /></a>
                     <p>{{ event.pub_date.date }}</p>
-                    <h2>{{ event.title }}</h2>
+                    <a href="event/articles/{{ event.id }}" class="event-title-link"><h2>{{ event.title }}</h2></a>
                 </div>
             {% endfor %}
         </div>
         <div class="slider-button" id="slider-right-button">
             <img src="{% static 'images/icons/right_arrow.png' %}" />
-        </div>
-    </div>
-</div>
-
-<div class="achievements">
-    <h1>Наши достижения</h1>
-    <div class="achievements-table">
-        <div class="achievements-table-cell" style="border-right: none; border-bottom: none;">
-            <img src="{% static 'images/icons/award.svg' %}" />
-            <p>100% покрытие центральной<br> части города </p>
-        </div>
-        <div class="achievements-table-cell" style="border-right: none; border-bottom: none;">
-            <img src="{% static 'images/icons/award.svg' %}" />
-            <p>Размещение рекламы без<br> посредников </p>
-        </div>
-        <div class="achievements-table-cell" style="border-bottom: none;">
-            <img src="{% static 'images/icons/award.svg' %}" />
-            <p>0,04 Р - цена одного контакта со<br> стендом</p>
-        </div>
-        <div class="achievements-table-cell" style="border-right: none;">
-            <img src="{% static 'images/icons/award.svg' %}" />
-            <p>3 дня до первых откликов после<br> размещения</p>
-        </div>
-        <div class="achievements-table-cell" style="border-right: none;">
-            <img src="{% static 'images/icons/award.svg' %}" />
-            <p>Скидки на длительное <br>размещение</p>
-        </div>
-        <div class="achievements-table-cell">
-            <img src="{% static 'images/icons/award.svg' %}" />
-            <p>Самый крупный собственник<br> Премиум-стендов</p>
         </div>
     </div>
 </div>

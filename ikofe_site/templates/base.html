@@ -13,7 +13,6 @@
         <script type="text/javascript" src="{% static 'js\throttle.js' %}"></script>
     </head>
     <body>
-
         {% if wasMailSent %}
             <script>
                 alert('Спасибо ваша заявка была принята,\n Вам перезвонят в ближайшее время');
@@ -21,7 +20,7 @@
         {% endif %}
         
         <div class="page-wrapper">
-
+            <div id="link-to-top"><a href="#top"><img src="{% static 'images/icons/right_arrow.png' %}" /></a></div>
                 <div class="mobile-menu" id="mobileMenu" style="display: none;">
                     <!-- creates from js -->
                 </div>
@@ -38,7 +37,7 @@
                     </div>
                     <div class="header-item">
                         <div class="header-subitem">
-                            <a href="#form"><img src="{% static 'images/icons/call.svg' %}"/></a>
+                            <a id="callIcon" href="#form"><img src="{% static 'images/icons/call.svg' %}"/></a>
                         </div>
                         <div class="header-subitem">
                             <a id="burger" href=""><img src="{% static 'images/icons/menu.svg' %}"/></a>
@@ -55,7 +54,7 @@
                         <div class="header-menu-item"><a href="{% url 'contacts' %}">контакты</a></div>
                     </div>
                 </div>
-
+                <a name="top"></a>
                 {% block content %}
                 {% endblock %}
 
@@ -132,6 +131,10 @@
         <script>
             document.getElementById('id_name').placeholder = 'Имя';
             document.getElementById('id_phone_number').placeholder = 'Номер телефона';
+
+            if(document.documentElement.clientWidth < 900) {
+                document.getElementById('callIcon').href = 'tel:73422870207';
+            }
         </script>
 
         <script type="text/javascript" src="{% static 'js\menu.js' %}"></script>

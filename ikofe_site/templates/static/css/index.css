@@ -236,7 +236,7 @@
 }
 
 .story-text-text {
-    height: 100%;
+    height: auto;
     width: 780px;
 }
 
@@ -309,6 +309,15 @@
 .event a {
     display: flex;
     width: 580px;
+}
+
+.event-title-link h2 {
+    color: #000000;
+}
+
+.event-title-link:hover h2 {
+    color: #E6177E;
+    text-decoration: underline;
 }
 
 .event a img {
