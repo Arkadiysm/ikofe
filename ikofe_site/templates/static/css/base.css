@@ -22,6 +22,10 @@ h1 {
     margin: 0;
 }
 
+.scrolloff {
+    pointer-events: none;
+}
+
 .page-wrapper {
     max-width: 1920px;
     display: flex;
@@ -537,7 +541,7 @@ h1 {
         display: block;
         position: fixed;
         right: 10px;
-        top: 40%;
+        bottom: 15%;
         z-index: 3;
         background-color: rgba(255, 255, 255, 0.7);
         border-radius: 2px;

@@ -5,13 +5,19 @@
 }
 
 .banner-left {
-    width: 600px;
+    width: 50%;
+    max-width: 600px;
     height: 100%;
 }
 
 .banner-right {
     display: flex;
     width: 50%;
+    max-width: 600px;
+}
+
+.banner-right img {
+    display: block;
 }
 
 .banner-label {
@@ -22,7 +28,7 @@
     height: 400px;
     background-color: #ffffff;
     padding-top: 32px;
-    margin-left: 32px;
+    margin-left: 20px;
 }
 
 .label-top {
@@ -144,7 +150,7 @@
     margin-top: 60px;
     margin-bottom: 120px;
     font-size: 18px;
-    text-align: center;
+    text-align: justify;
     line-height: 26px;
 }
 
@@ -348,7 +354,7 @@
     margin-bottom: 32px;
     color: #ffffff;
     font-size: 18px;
-    text-align: center;
+    text-align: justify;
 }
 
 .house-placement-button {
@@ -380,6 +386,16 @@
 
 .house-placement-button:hover span {
     color: #ffffff;
+}
+
+.mapOverlay {
+    background: transparent;
+    position: relative;
+    width: 640px;
+    height: 480px;
+    top: 480px;
+    margin-top: -480px;
+    cursor: pointer;
 }
 
 
@@ -706,6 +722,12 @@
         max-height: 300px;
     }
 
+    .price-left .mapOverlay {
+        max-height: 300px;
+        top: 300px;
+        margin-top: -300px;
+    }
+
     .price-right {
         width: 100%;
     }
@@ -746,7 +768,7 @@
         padding-right: 5%;
         margin-top: 0;
         height: 600px;
-        align-items: center;
+        align-items: justify;
         width: 100%;
     }
 

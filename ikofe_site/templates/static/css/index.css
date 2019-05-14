@@ -33,7 +33,7 @@
 
 .banner-window-label-label {
     font-size: 48px;
-    text-align: left;
+    text-align: justify;
     font-weight: bold;
     line-height: 48px;
     text-transform: uppercase;
@@ -157,9 +157,13 @@
 
 .services-text {
     width: 450px;
-    text-align: center;
+    text-align: justify;
     font-size: 18px;
     line-height: 26px;
+}
+
+.services-text:nth-child(2) {
+    text-align: center;
 }
 
 .services-button {
@@ -228,10 +232,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 120px;
-    margin-bottom: 120px;
+    margin-top: 80px;
+    margin-bottom: 80px;
     font-size: 18px;
-    text-align: center;
+    text-align: justify;
     line-height: 26px;
 }
 

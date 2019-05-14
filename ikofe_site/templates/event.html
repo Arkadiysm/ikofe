@@ -19,9 +19,9 @@
 <div class="events-wrapper">
     {% for event in events %}
         <div class="event">
-            <div class="event-img-link" href="">
+            <a class="event-img-link" href="/event/articles/{{ event.id }}">
                 <img src="/static/pictures/{{ event.image }}" />
-            </div>
+            </a>
             <p>{{ event.pub_date.date }}</p>
             <a class="event-title" href="event/articles/{{ event.id }}"><h2>{{ event.title }}</h2></a>
         </div>

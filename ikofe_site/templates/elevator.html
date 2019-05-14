@@ -112,7 +112,8 @@
     <h1>Сколько стоит размещение</h1>
     <div class="price">
         <div class="price-left">
-            <iframe src="https://www.google.com/maps/d/embed?mid=1AILWglygOs0gvd1T1XBNVs7RtqQPq7OT" width="640" height="480"></iframe>
+            <div class="mapOverlay" onClick="style.pointerEvents = 'none'"></div>
+            <iframe class="gmap" src="https://www.google.com/maps/d/embed?mid=1AILWglygOs0gvd1T1XBNVs7RtqQPq7OT" width="640" height="480"></iframe>
         </div>
         <div class="price-right">
             <div class="price-right-innerWRapper">
@@ -137,7 +138,8 @@
 
     <div class="price">
         <div class="price-left">
-            <iframe src="https://www.google.com/maps/d/embed?mid=1aIh_lSqOyzDkoTtNqZSXXNv4vRLbyaJh" width="640" height="480"></iframe>
+            <div class="mapOverlay" onClick="style.pointerEvents = 'none'"></div>
+            <iframe class="gmap" src="https://www.google.com/maps/d/embed?mid=1aIh_lSqOyzDkoTtNqZSXXNv4vRLbyaJh" width="640" height="480"></iframe>        
         </div>
         <div class="price-right">
             <div class="price-right-innerWRapper">
@@ -158,7 +160,8 @@
 
     <div class="price">
         <div class="price-left">
-            <iframe src="https://www.google.com/maps/d/embed?mid=1MsO8p67yQzzgUgLjIycECOs_ifoXAJhl" width="640" height="480"></iframe>
+            <div class="mapOverlay" onClick="style.pointerEvents = 'none'"></div>
+            <iframe class="gmap" src="https://www.google.com/maps/d/embed?mid=1MsO8p67yQzzgUgLjIycECOs_ifoXAJhl" width="640" height="480"></iframe>
         </div>
         <div class="price-right">
             <div class="price-right-innerWRapper">
@@ -179,7 +182,8 @@
 
     <div class="price">
         <div class="price-left">
-            <iframe src="https://www.google.com/maps/d/embed?mid=1DvJiLdb4IFBfJctOdgoryw__AGXwdrOv" width="640" height="480"></iframe>
+            <div class="mapOverlay" onClick="style.pointerEvents = 'none'"></div>
+            <iframe class="gmap" src="https://www.google.com/maps/d/embed?mid=1DvJiLdb4IFBfJctOdgoryw__AGXwdrOv" width="640" height="480"></iframe>    
         </div>
         <div class="price-right">
             <div class="price-right-innerWRapper">
@@ -268,6 +272,8 @@ if(document.documentElement.clientWidth < 500) {
         sliderPositionCounter += dist;
     }
 }
+
+
 </script>
 
 {% endblock %}

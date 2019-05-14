@@ -8,14 +8,15 @@ class IkofeForm(forms.Form):
     phone_number = forms.CharField(max_length=15, label='Телефон')
 
 
-def form_handler(req, form):
+def form_handler(req, form, hashtag):
     form = form(req.POST)
     if form.is_valid():
         name, number = form.cleaned_data['name'], form.cleaned_data['phone_number']
         text = '''
             Имя отправителя: {0}, \n
             Номер отправителя: {1}
-        '''.format(name, number)
+            #{2}
+        '''.format(name, number, hashtag)
 
         create_and_send_mail(DEFAULT_TO_EMAIL, 'Заявка ikofe', text)
         return True

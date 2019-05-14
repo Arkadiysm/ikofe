@@ -135,6 +135,8 @@
             if(document.documentElement.clientWidth < 900) {
                 document.getElementById('callIcon').href = 'tel:73422870207';
             }
+
+            document.getElementById('id_phone_number').pattern = "[7-8]9[0-9]{9}"
         </script>
 
         <script type="text/javascript" src="{% static 'js\menu.js' %}"></script>

@@ -7,7 +7,7 @@ from .forms import IkofeForm, form_handler
 def index(request):
     was_mail_sent = False
     if request.method == 'POST':
-        if form_handler(request, IkofeForm):
+        if form_handler(request, IkofeForm, 'главная'):
             was_mail_sent = True
     events = Event.get_last_events(6)
     context = {
@@ -22,7 +22,7 @@ def index(request):
 def elevator(request):
     was_mail_sent = False
     if request.method == 'POST':
-        if form_handler(request, IkofeForm):
+        if form_handler(request, IkofeForm, 'рекламалифты'):
             was_mail_sent = True
     context = {
         'title': 'Реклама в лифтах',
@@ -35,7 +35,7 @@ def elevator(request):
 def video_advertising(request):
     was_mail_sent = False
     if request.method == 'POST':
-        if form_handler(request, IkofeForm):
+        if form_handler(request, IkofeForm, 'видеореклама'):
             was_mail_sent = True
     projects = Project.get_last_projects(6)
     context = {
@@ -50,7 +50,7 @@ def video_advertising(request):
 def event(request, value=1):
     was_mail_sent = False
     if request.method == 'POST':
-        if form_handler(request, IkofeForm):
+        if form_handler(request, IkofeForm, 'новости'):
             was_mail_sent = True
     events_quantity = Event.get_events_quantity()
     pages_quantity = events_quantity / 8 if events_quantity % 8 == 0 \
@@ -73,7 +73,7 @@ def event(request, value=1):
 def project(request, category='all'):
     was_mail_sent = False
     if request.method == 'POST':
-        if form_handler(request, IkofeForm):
+        if form_handler(request, IkofeForm, 'проекты'):
             was_mail_sent = True
     projects = Project.get_all() if category == 'all' \
         else Project.get_all_by_category(category)
@@ -94,7 +94,7 @@ def project(request, category='all'):
 def contacts(request):
     was_mail_sent = False
     if request.method == 'POST':
-        if form_handler(request, IkofeForm):
+        if form_handler(request, IkofeForm, 'контакты'):
             was_mail_sent = True
     context = {
         'title': 'Контакты',
@@ -107,7 +107,7 @@ def contacts(request):
 def project_articles(request, value):
     was_mail_sent = False
     if request.method == 'POST':
-        if form_handler(request, IkofeForm):
+        if form_handler(request, IkofeForm, 'статьяпроекты'+value):
             was_mail_sent = True
 
     events = Event.get_last_events(6)
@@ -128,7 +128,7 @@ def project_articles(request, value):
 def event_articles(request, value):
     was_mail_sent = False
     if request.method == 'POST':
-        if form_handler(request, IkofeForm):
+        if form_handler(request, IkofeForm, 'статьяновости'+value):
             was_mail_sent = True
 
     events = Event.get_last_events(6)
@@ -149,7 +149,7 @@ def event_articles(request, value):
 def about_us(request):
     was_mail_sent = False
     if request.method == 'POST':
-        if form_handler(request, IkofeForm):
+        if form_handler(request, IkofeForm, 'онас'):
             was_mail_sent = True
 
     context = {
