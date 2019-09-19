@@ -90,3 +90,12 @@ class Project(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class pageHit(models.Model):
+    title = models.CharField(unique=True, max_length=1000)
+    count = models.PositiveIntegerField(default=0)
+
+    def __str__(self):
+        return self.title[1:] if self.title[1:] != '' else 'index'
+

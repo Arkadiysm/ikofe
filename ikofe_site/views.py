@@ -2,8 +2,10 @@ from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseNotFound
 from .models import Project, Event
 from .forms import IkofeForm, form_handler
+from .decorators import counted
 
 
+@counted
 def index(request):
     was_mail_sent = False
     if request.method == 'POST':
@@ -19,6 +21,7 @@ def index(request):
     return render(request, 'index.html', context=context)
 
 
+@counted
 def elevator(request):
     was_mail_sent = False
     if request.method == 'POST':
@@ -31,7 +34,7 @@ def elevator(request):
     }
     return render(request, 'elevator.html', context=context)
 
-
+@counted
 def video_advertising(request):
     was_mail_sent = False
     if request.method == 'POST':
@@ -47,6 +50,20 @@ def video_advertising(request):
     return render(request, 'video_ad.html', context=context)
 
 
+def car_adv(request):
+    was_mail_sent = False
+    if request.method == 'POST':
+        if form_handler(request, IkofeForm, 'видеореклама'):
+            was_mail_sent = True
+
+    context = {
+        'title': 'Реклама на газелях',
+        'form': IkofeForm(),
+    }
+    return render(request, 'car_adv.html', context=context)
+
+
+@counted
 def event(request, value=1):
     was_mail_sent = False
     if request.method == 'POST':
@@ -70,6 +87,7 @@ def event(request, value=1):
         return not_found(request)
 
 
+@counted
 def project(request, category='all'):
     was_mail_sent = False
     if request.method == 'POST':
@@ -91,6 +109,7 @@ def project(request, category='all'):
         return not_found(request)
 
 
+@counted
 def contacts(request):
     was_mail_sent = False
     if request.method == 'POST':
@@ -146,6 +165,7 @@ def event_articles(request, value):
         return not_found(request)
 
 
+@counted
 def about_us(request):
     was_mail_sent = False
     if request.method == 'POST':
@@ -162,6 +182,9 @@ def about_us(request):
 
 
 def not_found(request):
-    return render(request, '404.html')
+    context = {
+        'title': 'не найдена'
+    }
+    return render(request, '404.html', context=context)
 
 

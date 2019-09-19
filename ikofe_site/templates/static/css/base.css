@@ -89,6 +89,7 @@ h1 {
     align-items: center;
     width: 50%;
     height: 100%;
+    padding-left: 10px;
 }
 
 .header-item a {
@@ -270,7 +271,7 @@ h1 {
     border-bottom: none;
 }
 
-.footer-section-item:last-child,
+.footer-section-item:nth-child(6),
 .footer-section-item:nth-child(3) {
     border-right: 1px solid rgba(123, 124, 124, 0.5);
 }
@@ -310,6 +311,10 @@ h1 {
 }
 
 #link-to-top {
+    display: none;
+}
+
+.item-new {
     display: none;
 }
 
@@ -555,6 +560,11 @@ h1 {
         width: 30px;
         height: 30px;
         transform: rotate(-90deg);
+    }
+
+    .item-new {
+        display: flex;
+        border-bottom: none !important;
     }
     
 

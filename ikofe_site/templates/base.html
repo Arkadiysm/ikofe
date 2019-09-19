@@ -30,7 +30,7 @@
                         <a href="{% url 'index' %}"><img src="{% static 'images/logo.svg' %}" alt="Лого"/></a>
                     </div>
                     <div class="header-item">
-                        <a href="{% url 'video_ad' %}">видеореклама</a>
+                        <a href="{% url 'video_ad' %}">реклама на мониторах</a>
                     </div>
                     <div class="header-item">
                         <a href="{% url 'elevator' %}">реклама в лифтах</a>
@@ -40,20 +40,22 @@
                             <a id="callIcon" href="#form"><img src="{% static 'images/icons/call.svg' %}"/></a>
                         </div>
                         <div class="header-subitem">
-                            <a id="burger" href=""><img src="{% static 'images/icons/menu.svg' %}"/></a>
-                            <a id="cancel" href="" style="display: none;"><img src="{% static 'images/icons/close.svg' %}"/></a>
+                            <a href="https://vk.com/ikofe59" target="_blank"><img src="{% static 'images/icons/VK_white.svg' %}"/></a>
+                            <a href="https://facebook.com/ikofe59" target="_blank"><img src="{% static 'images/icons/Facebook_white.svg' %}"/></a>
+                            <a href="https://instagram.com/ikofe59" target="_blank"><img src="{% static 'images/icons/Instagram_white.svg' %}"/></a>
+                            <a href="https://www.youtube.com/channel/UCtvr5_E_2zOHGxBDkqAvE9A" target="_blank"><img src="{% static 'images/icons/YouTube_white.svg' %}"/></a>
                         </div>
                     </div>
                 </div>
 
-                <div id="headerMenu" class="header-menu">
+                <!--<div id="headerMenu" class="header-menu">
                     <div class="header-menu-items">
                         <div class="header-menu-item"><a href="{% url 'project' %}">наши проекты</a></div>
                         <div class="header-menu-item"><a href="{% url 'about_us' %}">о компании</a></div>
                         <div class="header-menu-item"><a href="{% url 'event' %}">новости</a></div>
                         <div class="header-menu-item"><a href="{% url 'contacts' %}">контакты</a></div>
                     </div>
-                </div>
+                </div>-->
                 <a name="top"></a>
                 {% block content %}
                 {% endblock %}
@@ -88,7 +90,7 @@
                         <div class="footer-section">
                             <div class="footer-section-item">
                                 <a href="{% url 'video_ad' %}">
-                                    видеореклама 
+                                    реклама на мониторах 
                                     <img class="arrow-icon" src="{% static 'images/icons/forward.svg' %}"/>
                                 </a>
                             </div>
